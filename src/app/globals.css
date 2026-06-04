@@ -10,16 +10,13 @@
   --color-brand-green-veg: #2ecc71;
   --color-brand-red-nonveg: #e74c3c;
   
-  --font-sans: var(--font-outfit), var(--font-geist-sans), sans-serif;
-  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-serif: var(--font-serif), serif;
 }
 
 :root {
   --background: #FFF3E3;
   --foreground: #4A2C20;
-  
-  --font-outfit: 'Outfit', sans-serif;
-  --font-playfair: 'Playfair Display', serif;
 }
 
 body {
@@ -64,35 +61,38 @@ html {
 /* Custom card shadow and transition */
 .momo-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(74, 44, 32, 0.08);
+  border: 1px solid rgba(74, 44, 32, 0.06);
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 .momo-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px -10px rgba(74, 44, 32, 0.15);
+  box-shadow: 0 20px 30px -10px rgba(74, 44, 32, 0.08);
   border-color: rgba(255, 90, 60, 0.2);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 /* Pulse animation for CTA buttons */
 @keyframes soft-pulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 4px 15px rgba(255, 90, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 90, 60, 0.25);
   }
   50% {
-    transform: scale(1.03);
-    box-shadow: 0 6px 22px rgba(255, 90, 60, 0.5);
+    transform: scale(1.02);
+    box-shadow: 0 6px 22px rgba(255, 90, 60, 0.4);
   }
 }
 
 .animate-soft-pulse {
-  animation: soft-pulse 2s infinite ease-in-out;
+  animation: soft-pulse 2.5s infinite ease-in-out;
 }
 
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -112,6 +112,7 @@ html {
 .sticker-badge {
   transform: rotate(-3deg);
   box-shadow: 2px 2px 0px #4A2C20;
+  transition: all 0.2s ease-out;
 }
 .sticker-badge:hover {
   transform: rotate(2deg) scale(1.05);

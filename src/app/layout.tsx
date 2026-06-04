@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-	variable: "--font-outfit",
+const sans = Plus_Jakarta_Sans({
+	variable: "--font-sans",
 	subsets: ["latin"],
 	weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const playfair = Playfair_Display({
-	variable: "--font-playfair",
+const serif = Fraunces({
+	variable: "--font-serif",
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700", "800", "900"],
+	weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -52,7 +52,7 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</head>
-			<body className={`${outfit.variable} ${playfair.variable} antialiased`}>
+			<body className={`${sans.variable} ${serif.variable} antialiased`}>
 				{children}
 			</body>
 		</html>
